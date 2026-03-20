@@ -1,0 +1,17 @@
+1. Input/Output (I/O)
+
+a.pinMode(pin, mode): Tells the Arduino if a pin is a "mouth" (OUTPUT) or an "ear" (INPUT).
+b.digitalWrite(pin, value): Sends a simple ON (HIGH/5V) or OFF (LOW/0V) signal.
+c.digitalRead(pin): Listens for a simple ON or OFF signal.
+
+2. Analog and PWM
+
+a.analogRead(pin): Unlike digital, this can measure values between 0 and 1023. This is useful for sensors like potentiometers or light sensors.
+b.analogWrite(pin, value): This uses Pulse Width Modulation (PWM) to simulate analog voltages. It toggles the pin on and off very fast to dim an LED or control motor speed.
+c.map(value, fromLow, fromHigh, toLow, toHigh): A mathematical shortcut. Since analogRead gives you up to 1023, but analogWrite only understands up to 255, map does the math to scale it down perfectly.
+
+3. Communication and Timing
+
+a.Serial.begin(baud): Required in setup if you want to see what's happening inside the code via the Serial Monitor.
+b.Serial.println(data): Prints text or variables to your screen. This is the most important tool for "debugging" or fixing errors in your code.
+c.delay(ms): Stops all code execution for the specified time. Use this sparingly, as the Arduino cannot listen for buttons while it is "sleeping" during a delay.
